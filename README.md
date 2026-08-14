@@ -157,7 +157,5 @@ Item images are stored in GCS bucket: **`lostandfoundsystem`**
 
 ## 👩‍💻 Author
 
-**Nethmi Dileksha Kavindi**  
-Higher Diploma in Software Engineering  
-ITS 2130 — Enterprise Cloud Architecture  
-IJSE
+**Nandika kaweesha Fernando**  
+

@@ -8,9 +8,9 @@ A cloud-native microservice-based Lost and Found management system deployed on G
 
 | Service | URL |
 |---|---|
-| 🟢 **Eureka Dashboard** | http://34.47.225.165:8761 |
-| 🌐 **API Gateway** | http://34.47.225.165:9000 |
-| ⚙️ **Config Server** | http://34.47.225.165:8000 |
+| 🟢 **Eureka Dashboard** | http://:8761 |
+| 🌐 **API Gateway** | http://:9000 |
+| ⚙️ **Config Server** | http://:8000 |
 
 ---
 

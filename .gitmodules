@@ -1,0 +1,18 @@
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/NandikaKW/lostfound-api-gateway.git
+[submodule "claim-service"]
+	path = claim-service
+	url = https://github.com/NandikaKW/lostfound-claim-service.git
+[submodule "config-server"]
+	path = config-server
+	url = https://github.com/NandikaKW/lostfound-config-server.git
+[submodule "eureka-server"]
+	path = eureka-server
+	url = https://github.com/NandikaKW/lostfound-eureka-server.git
+[submodule "item-service"]
+	path = item-service
+	url = https://github.com/NandikaKW/lostfound-item-service.git
+[submodule "user-services"]
+	path = user-services
+	url = https://github.com/NandikaKW/lostfound-user-services.git

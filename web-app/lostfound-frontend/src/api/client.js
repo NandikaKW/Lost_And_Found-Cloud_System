@@ -4,7 +4,7 @@ import axios from "axios";
 // USER-SERVICE (/auth/**, /api/users/**), ITEM-SERVICE (/api/items/**)
 // and CLAIM-SERVICE (/api/claims/**) via Eureka service discovery.
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:9000";
+  import.meta.env.VITE_API_BASE_URL || "http://136.110.137.222";
 
 const client = axios.create({
   baseURL: API_BASE_URL,

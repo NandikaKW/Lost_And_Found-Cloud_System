@@ -42,7 +42,7 @@ export default function Register() {
             <User size={16} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-soft" />
             <Input
               required
-              placeholder="Nishan Perera"
+              placeholder="Your Name"
               value={form.name}
               onChange={(e) => update("name", e.target.value)}
               className="pl-10"

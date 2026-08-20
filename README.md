@@ -14,6 +14,12 @@ A cloud-native, microservice-based Lost and Found management system deployed on 
 - **GCP Project ID:** `lost-and-found-505717`
 
 ---
+🎥 Screen Recording
+
+Project demonstration video:
+
+https://drive.google.com/file/d/1t6ENuev3dgAuesZuwsGjMKq29Md8nv0m/view?usp=sharing
+
 
 ## 🌐 Live Services (internal — VPC-private, not internet-accessible)
 

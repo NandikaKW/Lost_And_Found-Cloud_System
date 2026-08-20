@@ -7,8 +7,10 @@ A cloud-native, microservice-based Lost and Found management system deployed on 
 ## 👤 Student Information
 
 - **Student Name:** Nandika Kaweesha Fernando
-- **Student ID:** <STUDENT_ID>
-- **Slack Handle:** (optional)
+- **Student ID:** 241711041
+- **Slack Handle:** @Nandika Kaweesha 
+- **Slack Member ID:** U0BF5441QG6
+- **Slack Profile Link:** https://ijse-eca-hdse-71-72.slack.com/team/U0BF5441QG6
 - **GCP Project ID:** `lost-and-found-505717`
 
 ---

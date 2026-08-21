@@ -1,10 +1,9 @@
-# 🔍 Lost and Found Cloud System
+#  Lost and Found Cloud System
 
-A cloud-native, microservice-based Lost and Found management system deployed on Google Cloud Platform (GCP).
+A cloud-native, microservice-based Lost and Found management system deployed on Google Cloud Platform (GCP). The system is designed using Spring Boot, Spring Cloud, React, and multiple database technologies, with private networking, service discovery, centralized configuration, API gateway routing, and cloud infrastructure.
 
----
 
-## 👤 Student Information
+##  Student Information
 
 - **Student Name:** Nandika Kaweesha Fernando
 - **Student ID:** 241711041
@@ -13,7 +12,7 @@ A cloud-native, microservice-based Lost and Found management system deployed on 
 - **Slack Profile Link:** https://ijse-eca-hdse-71-72.slack.com/team/U0BF5441QG6
 - **GCP Project ID:** `lost-and-found-505717`
 
----
+
 🎥 Screen Recording
 
 Project demonstration video:
@@ -21,7 +20,7 @@ Project demonstration video:
 https://drive.google.com/file/d/1t6ENuev3dgAuesZuwsGjMKq29Md8nv0m/view?usp=sharing
 
 
-## 🌐 Live Services (internal — VPC-private, not internet-accessible)
+##  Live Services (internal — VPC-private, not internet-accessible)
 
 These services run on private internal IPs inside the `lostfound-vpc` VPC network and are only reachable from within that network (by design, for security). They are not exposed to the public internet directly — access is intended through the API Gateway / Load Balancer.
 
@@ -31,16 +30,16 @@ These services run on private internal IPs inside the `lostfound-vpc` VPC networ
 | 🌐 **API Gateway** | `http://10.10.0.10:9000` |
 | ⚙️ **Config Server** | `http://10.10.0.10:8000` |
 
----
 
-## 🏗️ Architecture Overview
+
+##  Architecture Overview
 
 This system follows a **Microservice Architecture** using Spring Boot 4.1.0 and Spring Cloud 2025.1.2 (Java 25), deployed on GCP with high availability and auto-scaling support via Managed Instance Groups and a global Load Balancer.
 
 
----
 
-## 🧩 Microservices
+
+##  Microservices
 
 ### 1. User Service — Port `8082`
 - Handles user registration, authentication, and role management (user/admin)
@@ -55,9 +54,9 @@ This system follows a **Microservice Architecture** using Spring Boot 4.1.0 and 
 - Handles item claim requests and approve/reject workflow
 - **Database:** MySQL (`claim_service_db`) via Cloud SQL, private IP `10.209.96.3`
 
----
 
-## ⚙️ Platform Components
+
+##  Platform Components
 
 | Component | Port | VM | Internal IP | Description |
 |---|---|---|---|---|
@@ -65,9 +64,9 @@ This system follows a **Microservice Architecture** using Spring Boot 4.1.0 and 
 | Config Server | 8000 | `platform-vm` | `10.10.0.10` | Centralized configuration management |
 | API Gateway | 9000 | `platform-vm` | `10.10.0.10` | Single entry point for all backend services |
 
----
 
-## 🗄️ Database
+
+##  Database
 
 | Type | Technology | Host | Used By |
 |---|---|---|---|
@@ -75,9 +74,9 @@ This system follows a **Microservice Architecture** using Spring Boot 4.1.0 and 
 | Non-Relational | MongoDB 7.0 (self-hosted on Compute Engine) | `10.10.0.2` | Item Service (`lost-and-found-microservice`) |
 | Document Store | Firestore (Native mode) | Managed | Audit logging |
 
----
 
-## ☁️ GCP Infrastructure
+
+##  GCP Infrastructure
 
 | Resource | Name | Details |
 |---|---|---|
@@ -96,14 +95,14 @@ This system follows a **Microservice Architecture** using Spring Boot 4.1.0 and 
 | Service Accounts | `lostfound-app-sa`, `lostfound-storage-sa` | Least-privilege IAM roles |
 | Workload Identity Federation | `github-pool` / `github-provider` | Keyless auth for GitHub Actions CI/CD |
 
----
-
-## 📦 Repository Structure (Polyrepo + Git Submodules)
 
 
----
+##  Repository Structure (Polyrepo + Git Submodules)
 
-## 🔌 API Endpoints (via API Gateway)
+
+
+
+##  API Endpoints (via API Gateway)
 
 | Method | Endpoint | Service |
 |---|---|---|
@@ -114,9 +113,9 @@ This system follows a **Microservice Architecture** using Spring Boot 4.1.0 and 
 
 CORS is configured on the API Gateway to allow requests from the deployed frontend origin.
 
----
 
-## 🚀 Process Management (PM2)
+
+##  Process Management (PM2)
 
 Since services run directly on Compute Engine VMs (not containerized), **PM2** manages all Java processes — starting them, restarting them on failure, and re-starting them automatically after a VM reboot.
 
@@ -138,9 +137,9 @@ pm2 startup   # run the printed command once to register with systemd
 **Platform VM** (`10.10.0.10`) runs: `eureka-server`, `config-server`, `api-gateway`
 **Services VM** (`10.10.0.20`) runs: `user-services`, `item-service`, `claim-service`
 
----
 
-## 📁 Cloud Storage
+
+##  Cloud Storage
 
 Item photos are stored in the GCS bucket: **`lost-and-found-505717-images`**
 
@@ -148,9 +147,9 @@ Item photos are stored in the GCS bucket: **`lost-and-found-505717-images`**
 - Publicly readable (`Storage Object Viewer` granted to `allUsers`)
 - Object naming convention: `items/<uuid>_<original-filename>`
 
----
 
-## 🛠️ Tech Stack
+
+##  Tech Stack
 
 - **Backend:** Java 25, Spring Boot 4.1.0, Spring Cloud 2025.1.2 (Oakwood)
 - **Frontend:** React 19 + Vite + TypeScript
@@ -162,9 +161,9 @@ Item photos are stored in the GCS bucket: **`lost-and-found-505717-images`**
 - **API Gateway:** Spring Cloud Gateway
 - **IAM:** Service Accounts + Workload Identity Federation (keyless GitHub Actions auth)
 
----
 
-## 🖥️ Getting Started (Local Development)
+
+##  Getting Started (Local Development)
 
 ```bash
 # Clone with all submodules
@@ -181,8 +180,9 @@ java -jar target/item-service-0.0.1-SNAPSHOT.jar
 
 Each service's `application.properties` points to the GCP-hosted databases and platform services by default. For fully local development, override `spring.datasource.url`, `spring.data.mongodb.uri`, and the Eureka/Config Server URLs to point at `localhost`.
 
----
 
-## 👩‍💻 Author
 
-**Nandika Kaweesha Fernando**
+## Author
+
+**Nandika Kaweesha Fernando**<br>
+**Student ID:** 241711041
